@@ -1,0 +1,18 @@
+wget https://downloads.apache.org/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
+tar -xvf spark-2.4.5-bin-hadoop2.7.tgz
+
+export SPARK_HOME = /home/hadoop/spark-2.1.0-bin-hadoop2.7
+export PATH = $PATH:/home/hadoop/spark-2.1.0-bin-hadoop2.7/bin
+export PYTHONPATH = $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
+export PATH = $SPARK_HOME/python:$PATH
+
+https://www.oracle.com/java/technologies/javase-jdk8-downloads.html
+tar zxvf jdk-8u241-linux-x64.tar.gz
+sudo mv jdk1.8.0_241/ /usr/lib/jvm/jdk8/
+
+JAVA_HOME="/usr/lib/jvm/jdk-13.0.2/"
+export JAVA_HOME
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
+
+pip install py4j
