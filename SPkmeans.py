@@ -18,7 +18,7 @@ spark = SparkSession \
     .getOrCreate()
 # Loads data.
 dataset = spark.read.load(filename, format="csv", sep=",", inferSchema="True", header="false")
-
+k = 8
 n=len(dataset.columns)
 ToBeDropped = n-1
 col=dataset.columns
@@ -32,7 +32,7 @@ assb = VectorAssembler(
     outputCol="features")
 dataset = assb.transform(dataset)
 dataset.show()
-kmeans = KMeans().setK(2).setSeed(1)
+kmeans = KMeans().setK(k).setSeed(1)
 model = kmeans.fit(dataset)
 
 # Make predictions
