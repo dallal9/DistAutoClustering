@@ -32,7 +32,7 @@ assb = VectorAssembler(
     outputCol="features")
 dataset = assb.transform(dataset)
 dataset.show()
-kmeans = KMeans().setK(k).setSeed(1)
+kmeans = KMeans().setK(k).setSeed(1).setDistanceMeasure("cosine")
 model = kmeans.fit(dataset)
 
 # Make predictions
